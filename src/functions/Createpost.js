@@ -10,7 +10,7 @@ export const createPost = async (
 ) => {
   try {
     const { data } = await axios.post(
-      "/api/createPost",
+      `${process.env.REACT_APP_BACKEND_URL}/api/createPost`,
       {
         type,
         images,
@@ -33,7 +33,7 @@ export const createPost = async (
 export const createComment = async (postId, comment, image, token) => {
   try {
     const { data } = await axios.put(
-      "/api/comment",
+      `${process.env.REACT_APP_BACKEND_URL}/api/comment`,
       {
         postId,
         comment,
@@ -54,7 +54,7 @@ export const createComment = async (postId, comment, image, token) => {
 export const SavedPost = async (postId, token) => {
   try {
     const { data } = await axios.put(
-      `/api/savepost/${postId}`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/savepost/${postId}`,
       {},
       {
         headers: {
@@ -69,7 +69,7 @@ export const SavedPost = async (postId, token) => {
 };
 export const removeposts = async (postId, token) => {
   try {
-    const { data } = await axios.delete(`/api/removepost/${postId}`, {
+    const { data } = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/removepost/${postId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

@@ -34,7 +34,7 @@ function App() {
       dispatch({
         type: "POSTS_REQUEST",
       });
-      const { data } = await axios.get("/api/getPost", {
+      const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/getPost`, {
         headers: {
           Authorization: `Bearer ${users.token}`,
         },

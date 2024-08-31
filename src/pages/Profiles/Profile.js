@@ -48,7 +48,7 @@ const Profile = () => {
       dispatch({
         type: "PROFILE_REQUEST",
       });
-      const { data } = await axios.get(`/api/getuser/${userName}`, {
+      const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/getuser/${userName}`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -59,7 +59,7 @@ const Profile = () => {
         // for all and profile picture
         try {
           const images = await axios.post(
-            `/api/listimage`,
+            `${process.env.REACT_APP_BACKEND_URL}/api/listimage`,
             { path, sort, max },
             {
               headers: {

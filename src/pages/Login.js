@@ -25,7 +25,7 @@ const Login = () => {
   const loginUser = async () => {
     setLoading(true);
     try {
-      let { data } = await axios.post("/api/login", {
+      let { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/login`, {
         email: formik.values.email,
         password: formik.values.password,
       });

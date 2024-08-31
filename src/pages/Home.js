@@ -9,6 +9,7 @@ import Reauth from "../Component/re-authorization/Reauth";
 import Showpost from "../Component/Posts/Showpost";
 
 const Home = ({ setVisible, posts, user, getPost, loading }) => {
+
   return (
     <div>
       <Helmet>

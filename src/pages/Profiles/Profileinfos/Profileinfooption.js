@@ -34,7 +34,7 @@ const Profileinfooption = ({ userDtails, users, visitor, setOthername }) => {
   const updateDetails = async () => {
     try {
       let { data } = await axios.put(
-        "/api/updatedetails",
+        `${process.env.REACT_APP_BACKEND_URL}/api/updatedetails`,
         {
           infos,
         },
@@ -236,15 +236,15 @@ const Profileinfooption = ({ userDtails, users, visitor, setOthername }) => {
         </div>
       </div>
       {!visitor &&
-      !details?.othername &&
-      !details?.job &&
-      !details?.workplace &&
-      !details?.hometown &&
-      !details?.currentcity &&
-      !details?.relationship &&
-      !details?.highschool &&
-      !details?.college &&
-      !details?.instagram ? (
+        !details?.othername &&
+        !details?.job &&
+        !details?.workplace &&
+        !details?.hometown &&
+        !details?.currentcity &&
+        !details?.relationship &&
+        !details?.highschool &&
+        !details?.college &&
+        !details?.instagram ? (
         <button
           onClick={() => setVisible(true)}
           className="bg-page_color w-full py-2 rounded-md mt-3 text-secondary_color font-normal text-base font-primary"

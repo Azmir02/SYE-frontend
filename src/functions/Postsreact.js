@@ -3,7 +3,7 @@ import axios from "axios";
 export const reactPosts = async (postId, react, token) => {
   try {
     const { data } = await axios.put(
-      "/api/reactPost",
+      `${process.env.REACT_APP_BACKEND_URL}/api/reactPost`,
       {
         postId,
         react,
@@ -21,7 +21,7 @@ export const reactPosts = async (postId, react, token) => {
 };
 export const getreactPosts = async (postId, token) => {
   try {
-    const { data } = await axios.get(`/api/getreactPost/${postId}`, {
+    const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/getreactPost/${postId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

@@ -3,7 +3,7 @@ import axios from "axios";
 export const UploadCoverpicture = async (url, token) => {
   try {
     const { data } = await axios.put(
-      "/api/getcoverpicture",
+      `${process.env.REACT_APP_BACKEND_URL}/api/getcoverpicture`,
       {
         url,
       },

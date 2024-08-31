@@ -3,7 +3,7 @@ import axios from "axios";
 export const addFriend = async (id, token) => {
   try {
     const { data } = await axios.put(
-      `/api/addfriend/${id}`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/addfriend/${id}`,
       {},
       {
         headers: {
@@ -20,7 +20,7 @@ export const addFriend = async (id, token) => {
 export const cancelrequest = async (id, token) => {
   try {
     const { data } = await axios.put(
-      `/api/cancelrequest/${id}`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/cancelrequest/${id}`,
       {},
       {
         headers: {
@@ -36,7 +36,7 @@ export const cancelrequest = async (id, token) => {
 export const follow = async (id, token) => {
   try {
     const { data } = await axios.put(
-      `/api/follow/${id}`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/follow/${id}`,
       {},
       {
         headers: {
@@ -52,7 +52,7 @@ export const follow = async (id, token) => {
 export const unfollow = async (id, token) => {
   try {
     const { data } = await axios.put(
-      `/api/unfollow/${id}`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/unfollow/${id}`,
       {},
       {
         headers: {
@@ -69,7 +69,7 @@ export const unfollow = async (id, token) => {
 export const acceprequest = async (id, token) => {
   try {
     const { data } = await axios.put(
-      `/api/acceprequest/${id}`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/acceprequest/${id}`,
       {},
       {
         headers: {
@@ -85,7 +85,7 @@ export const acceprequest = async (id, token) => {
 export const unfriend = async (id, token) => {
   try {
     const { data } = await axios.put(
-      `/api/unfriend/${id}`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/unfriend/${id}`,
       {},
       {
         headers: {
@@ -101,7 +101,7 @@ export const unfriend = async (id, token) => {
 export const deleterequest = async (id, token) => {
   try {
     const { data } = await axios.put(
-      `/api/deleterequest/${id}`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/deleterequest/${id}`,
       {},
       {
         headers: {
@@ -118,7 +118,7 @@ export const deleterequest = async (id, token) => {
 export const search = async (searchTerm, token) => {
   try {
     const { data } = await axios.post(
-      `/api/search/${searchTerm}`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/search/${searchTerm}`,
       {},
       {
         headers: {
@@ -135,7 +135,7 @@ export const search = async (searchTerm, token) => {
 export const addsearchHistory = async (searchUser, token) => {
   try {
     const { data } = await axios.put(
-      `/api/addsearchhistory`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/addsearchhistory`,
       { searchUser },
       {
         headers: {
@@ -151,7 +151,7 @@ export const addsearchHistory = async (searchUser, token) => {
 
 export const getsearchHistory = async (token) => {
   try {
-    const { data } = await axios.get(`/api/getsearchhistory`, {
+    const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/getsearchhistory`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -165,7 +165,7 @@ export const getsearchHistory = async (token) => {
 export const removesearchHistory = async (searchUser, token) => {
   try {
     const { data } = await axios.put(
-      `/api/removesearchhistory`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/removesearchhistory`,
       { searchUser },
       {
         headers: {
@@ -181,7 +181,7 @@ export const removesearchHistory = async (searchUser, token) => {
 
 export const getFriendsInfopage = async (token) => {
   try {
-    const { data } = await axios.get(`/api/getfriendsinfopage`, {
+    const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/getfriendsinfopage`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

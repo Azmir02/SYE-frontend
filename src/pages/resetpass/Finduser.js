@@ -41,7 +41,7 @@ const Finduser = () => {
   const handleSearch = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.post("/api/resetpass", {
+      const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/resetpass`, {
         email: formik.values.email,
       });
       setLoading(false);

@@ -32,7 +32,7 @@ const Resetpass = ({
   const sendCode = async () => {
     try {
       setLoading(true);
-      await axios.post("/api/resetcode", {
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/resetcode`, {
         email,
       });
       setLoading(false);

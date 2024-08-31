@@ -32,7 +32,7 @@ const Registration = () => {
   const registration = async () => {
     try {
       setLoading(true);
-      let { data } = await axios.post("/api/signup", {
+      let { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/signup`, {
         fName: formik.values.fName,
         lName: formik.values.lName,
         email: formik.values.email,

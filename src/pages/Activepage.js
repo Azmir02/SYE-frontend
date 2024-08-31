@@ -32,7 +32,7 @@ const Activepage = () => {
     try {
       setLoading(true);
       let { data } = await axios.post(
-        "/api/activate",
+        `${process.env.REACT_APP_BACKEND_URL}/api/activate`,
         { token },
         {
           headers: {
