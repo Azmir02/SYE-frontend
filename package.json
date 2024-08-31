@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "proxy": "http://localhost:8000/",
+  "proxy": "https://sye-backend-eight.vercel.app/",
   "private": true,
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^6.1.2",
