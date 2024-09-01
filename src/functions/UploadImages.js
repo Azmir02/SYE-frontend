@@ -10,6 +10,6 @@ export const uploadIamge = async (formData, path, token) => {
     });
     return data;
   } catch (error) {
-    return error.response.data.messasge;
+    return error.response?.data?.message || "Internal server error";
   }
 };
