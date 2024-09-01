@@ -4,7 +4,6 @@ import Helpmenu from "./Helpmenu";
 import Profile from "./Profile";
 import Settingsmenu from "./Settingsmenu";
 import { useDispatch } from "react-redux";
-import { createUser } from "../../../features/users/userSlice";
 import { LoginUser } from "../../../features/users/loginUser";
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +15,6 @@ const Usermenu = ({ user }) => {
   // logout-functionality
   const handleLogout = () => {
     localStorage.removeItem("user");
-    dispatch(createUser(null));
     dispatch(LoginUser(null));
     navigate("/login");
   };

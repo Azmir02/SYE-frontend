@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet-async'
 import { useFormik } from 'formik'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { createUser } from '../../features/users/userSlice';
 import { LoginUser } from '../../features/users/loginUser';
 import Logo from '../../svg/logo'
 import axios from 'axios'
@@ -15,7 +14,6 @@ const Changepass = ({ setVisible, users, setError, error, setLoading, userInfos 
 
     const handleLogout = () => {
         localStorage.removeItem('user')
-        dispatch(createUser(null))
         dispatch(LoginUser(null))
         navigate('/login')
     }

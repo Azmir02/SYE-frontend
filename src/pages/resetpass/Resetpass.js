@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { createUser } from "../../features/users/userSlice";
 import { LoginUser } from "../../features/users/loginUser";
 import Logo from "../../svg/logo";
 import axios from "axios";
@@ -21,7 +20,6 @@ const Resetpass = ({
 
   const handleLogout = () => {
     localStorage.removeItem("user");
-    dispatch(createUser(null));
     dispatch(LoginUser(null));
     navigate("/login");
   };

@@ -9,7 +9,6 @@ import Activate from "./Activate";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { createUser } from "../features/users/userSlice";
 import { LoginUser } from "../features/users/loginUser";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -46,7 +45,6 @@ const Activepage = () => {
         "user",
         JSON.stringify({ ...users, verified: true })
       );
-      dispatch(createUser({ ...users, verified: true }));
       dispatch(LoginUser({ ...users, verified: true }));
       setTimeout(() => {
         navigate("/");

@@ -5,7 +5,6 @@ import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { createUser } from "../../features/users/userSlice";
 import { LoginUser } from "../../features/users/loginUser";
 import Logo from "../../svg/logo";
 import { useState } from "react";
@@ -25,7 +24,6 @@ const Finduser = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("user");
-    dispatch(createUser(null));
     dispatch(LoginUser(null));
     navigate("/login");
   };

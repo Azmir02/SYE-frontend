@@ -5,7 +5,6 @@ import { BiErrorCircle } from "react-icons/bi";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { signUp } from "../validation/index";
 import { useDispatch } from "react-redux";
-import { createUser } from "../features/users/userSlice";
 import ClipLoader from "react-spinners/ClipLoader";
 import { Helmet } from "react-helmet-async";
 import axios from "axios";
@@ -47,8 +46,6 @@ const Registration = () => {
       setFailed("");
       const { message, ...rest } = data;
       setTimeout(() => {
-        dispatch(createUser(rest));
-        localStorage.setItem("user", JSON.stringify(rest));
         navigate("/login");
       }, 3000);
     } catch (err) {

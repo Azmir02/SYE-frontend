@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Editbio from "./Editbio";
-import { createUser } from "../../../features/users/userSlice";
 import { LoginUser } from "../../../features/users/loginUser";
 import Editdetails from "./Editdetails";
 import { useDispatch } from "react-redux";
@@ -48,7 +47,6 @@ const Profileinfooption = ({ userDtails, users, visitor, setOthername }) => {
       setDetails(data);
       setOthername(data.othername);
       dispatch(LoginUser({ ...users, details: data.othername }));
-      dispatch(createUser({ ...users, details: data.othername }));
       localStorage.setItem(
         "user",
         JSON.stringify({ ...users, details: data.othername })
